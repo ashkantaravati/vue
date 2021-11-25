@@ -18,7 +18,7 @@ Hi! I'm really excited that you are interested in contributing to Vue.js. Before
 
 - Checkout a topic branch from the relevant branch, e.g. `dev`, and merge back against that branch.
 
-- Work in the `src` folder and **DO NOT** checkin `dist` in the commits.
+- Work in the `src` folder and **DO NOT** check-in `dist` in the commits.
 
 - It's OK to have multiple small commits as you work on the PR - GitHub will automatically squash it before merging.
 
@@ -28,7 +28,7 @@ Hi! I'm really excited that you are interested in contributing to Vue.js. Before
   - Add accompanying test case.
   - Provide a convincing reason to add this feature. Ideally, you should open a suggestion issue first and have it approved before working on it.
 
-- If fixing bug:
+- If fixing a bug:
   - If you are resolving a special issue, add `(fix #xxxx[,#xxxx])` (#xxxx is the issue id) in your PR title for a better release log, e.g. `update entities encoding/decoding (fix #3899)`.
   - Provide a detailed description of the bug in the PR. Live demo preferred.
   - Add appropriate test coverage if applicable.
@@ -81,7 +81,7 @@ The default test script will do the following: lint with ESLint -> type check wi
 
 - **`flow`**: contains type declarations for [Flow](https://flowtype.org/). These declarations are loaded **globally** and you will see them used in type annotations in normal source code.
 
-- **`packages`**: contains `vue-server-renderer` and `vue-template-compiler`, which are distributed as separate NPM packages. They are automatically generated from the source code and always have the same version with the main `vue` package.
+- **`packages`**: contains `vue-server-renderer` and `vue-template-compiler`, which are distributed as separate NPM packages. They are automatically generated from the source code and always have the same version as the main `vue` package.
 
 - **`test`**: contains all tests. The unit tests are written with [Jasmine](http://jasmine.github.io/2.3/introduction.html) and run with [Karma](http://karma-runner.github.io/0.13/index.html). The e2e tests are written for and run with [Nightwatch.js](http://nightwatchjs.org/).
 
@@ -101,7 +101,7 @@ The default test script will do the following: lint with ESLint -> type check wi
 
     - **`instance`**: contains Vue instance constructor and prototype methods.
 
-    - **`global-api`**: contains Vue global api.
+    - **`global-api`**: contains Vue global API.
 
     - **`components`**: contains universal abstract components.
 
@@ -111,7 +111,7 @@ The default test script will do the following: lint with ESLint -> type check wi
 
     Entry files for dist builds are located in their respective platform directory.
 
-    Each platform module contains three parts: `compiler`, `runtime` and `server`, corresponding to the three directories above. Each part contains platform-specific modules/utilities which are imported and injected to the core counterparts in platform-specific entry files. For example, the code implementing the logic behind `v-bind:class` is in `platforms/web/runtime/modules/class.js` - which is imported in `entries/web-runtime.js` and used to create the browser-specific vdom patching function.
+    Each platform module contains three parts: `compiler`, `runtime`, and `server`, corresponding to the three directories above. Each part contains platform-specific modules/utilities which are imported and injected into the core counterparts in platform-specific entry files. For example, the code implementing the logic behind `v-bind:class` is in `platforms/web/runtime/modules/class.js` - which is imported in `entries/web-runtime.js` and used to create the browser-specific vdom patching function.
 
   - **`sfc`**: contains single-file component (`*.vue` files) parsing logic. This is used in the `vue-template-compiler` package.
 
